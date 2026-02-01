@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ConectCoins - Petra Life</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header>
+    <h1 id="txt-logo">ConectCoin✨</h1>
+    <span class="subtitle">
+        Sistema de Moedas Coral de Jovens Petra Life - AD Jaderlândia
+    </span>
+    <button id="logout-btn" class="btn-sair-icon hidden" onclick="logout()">Sair</button>
+</header>
+
+<div id="tela-login" class="container">
+    <h2>Entrar</h2>
+    <input type="email" id="email" placeholder="lider@email.com">
+    <input type="password" id="senha" placeholder="••••••">
+    <button class="btn-login" onclick="executarLogin()">Acessar Sistema</button>
+    <button class="btn-link" onclick="mostrarCadastro()">Criar conta nova</button>
+
+    <div class="tema-container">
+        <span class="tema-label">Temporada atual:</span>
+        <div id="txt-temporada" class="tema-txt">Carregando...</div>
+    </div>
+</div>
+
+<div id="tela-auto-cadastro" class="container hidden">
+    <h2>Nova Conta</h2>
+    <input type="text" id="self-nome" placeholder="Nome Completo">
+    <input type="email" id="self-email" placeholder="E-mail">
+    <input type="password" id="self-senha" placeholder="Senha">
+    <button class="btn-presenca" onclick="enviarAutoCadastro()">Finalizar Cadastro</button>
+    <button class="btn-link" onclick="mostrarLogin()">Voltar ao Login</button>
+</div>
+
+<div id="painel-jovem" class="container hidden">
+    <div class="user-welcome">👋 Olá, <span class="u-name"></span>!</div>
+
+    <div class="card-saldo">
+        <p>SEU SALDO CONECTCOIN</p>
+        <h1 id="meu-saldo">0 CC</h1>
+    </div>
+
+    <h3>🏆 Ranking Geral</h3>
+    <table>
+        <tbody class="rank-body"></tbody>
+    </table>
+</div>
+
+<div id="painel-lider" class="container hidden">
+    <div class="user-welcome">⭐ Líder: <span class="u-name"></span></div>
+
+    <h3>🤩 Registrar Presença</h3>
+    <select id="lista-jovens"></select>
+
+    <select id="tipo-ativ">
+        <option>Culto</option>
+        <option>EBD</option>
+        <option>Ensaios</option>
+        <option>Eventos</option>
+    </select>
+
+    <button class="btn-presenca" onclick="enviarPresenca()">Confirmar Presença</button>
+
+    <h3 class="section-top">🌟 Recompensa Especial</h3>
+    <p class="hint">
+        Atribua +10 pontos extras (comportamento, tarefas, etc) para o jovem selecionado acima.
+    </p>
+    <button class="btn-bonus" onclick="enviarPontosExtras()">Dar +10 Pontos Extras</button>
+
+    <h3 class="section-top">🏆 Ranking Atual</h3>
+    <table>
+        <tbody class="rank-body"></tbody>
+    </table>
+</div>
+
+<div id="painel-adm" class="container hidden">
+    <div class="user-welcome adm">⚙️ ADM: <span class="u-name"></span></div>
+
+    <h3 class="adm-title">🎨 Personalizar App</h3>
+
+    <div class="config-box">
+        <div class="config-item">
+            <label>Cor do App:</label>
+            <input type="color" id="cfg-color-main">
+        </div>
+
+        <div class="config-item">
+            <label>Tema da Temporada:</label>
+            <input type="text" id="cfg-txt-tema">
+        </div>
+
+        <button class="btn-adm" onclick="salvarDesignPermanente()">Salvar para Todos</button>
+    </div>
+
+    <h3 class="section-top">🏆 Ranking</h3>
+    <table>
+        <tbody class="rank-body"></tbody>
+    </table>
+</div>
+
+<footer>
+    Feito com ❤️ por Breno e Larissa
+</footer>
+
+<!-- JS (backend lógico via Apps Script) -->
+<script src="../backend/script.js"></script>
+</body>
+</html>
